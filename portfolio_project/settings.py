@@ -69,12 +69,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 
-# =========================
-
-# DATABASE (FIXED 🔥)
-
-# =========================
-
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
 if DATABASE_URL:
@@ -106,12 +100,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# =========================
-
-# STATIC FILES (IMPORTANT)
-
-# =========================
-
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
@@ -142,17 +130,3 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # DEFAULT PK
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-if os.environ.get("RENDER"):
-    try:
-        from django.contrib.auth import get_user_model
-        User = get_user_model()
-        if not User.objects.filter(username=os.environ.get("DJANGO_SUPERUSER_USERNAME")).exists():
-            User.objects.create_superuser(
-                username=os.environ.get("DJANGO_SUPERUSER_USERNAME"),
-                email=os.environ.get("DJANGO_SUPERUSER_EMAIL"),
-                password=os.environ.get("DJANGO_SUPERUSER_PASSWORD"),
-            )
-    except Exception as e:
-        print("Superuser creation skipped:", e)
