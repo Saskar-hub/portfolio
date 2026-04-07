@@ -33,6 +33,7 @@ class About(models.Model):
     description = RichTextField(null=True, blank=True)
     profile_image = models.ImageField(upload_to='about/', blank=True, null=True)
     resume_file = models.FileField(upload_to='cv/', blank=True, null=True)
+    resume_static = models.CharField(max_length=200, blank=True, null=True, help_text="Path to static resume file (e.g. 'portfolio/pdf/resume.pdf')")
 
     def __str__(self):
         return "About Section"
