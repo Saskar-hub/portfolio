@@ -5,35 +5,19 @@ from django import forms
 from rest_framework import viewsets, permissions, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
-<<<<<<< HEAD
-=======
-
-# views.py
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
-
-
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
 from .models import (
-    SiteSettings, HeroSection, About, Skill, Project, 
+    SiteSettings, HeroSection, About, Skill, Project,
     Blog, ContactMessage, Testimonial, Experience, ProjectImage
 )
 from .serializers import (
-    SiteSettingsSerializer, HeroSectionSerializer, AboutSerializer, 
-    SkillSerializer, ProjectSerializer, BlogSerializer, 
+    SiteSettingsSerializer, HeroSectionSerializer, AboutSerializer,
+    SkillSerializer, ProjectSerializer, BlogSerializer,
     ContactMessageSerializer, TestimonialSerializer, ExperienceSerializer
 )
-<<<<<<< HEAD
 from django import forms as django_forms
 from .forms import (
-    SiteSettingsForm, HeroSectionForm, AboutForm, SkillForm, 
+    SiteSettingsForm, HeroSectionForm, AboutForm, SkillForm,
     ProjectForm, BlogForm, ContactMessageForm, TestimonialForm, ExperienceForm
-=======
-from .forms import (
-    SiteSettingsForm, HeroSectionForm, AboutForm, SkillForm, 
-    ProjectForm, BlogForm, TestimonialForm, ExperienceForm
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
 )
 
 # --- API ViewSets ---
@@ -87,7 +71,7 @@ class BlogViewSet(viewsets.ModelViewSet):
 class ContactMessageViewSet(viewsets.ModelViewSet):
     queryset = ContactMessage.objects.all()
     serializer_class = ContactMessageSerializer
-    
+
     def get_permissions(self):
         if self.action == 'create':
             return [permissions.AllowAny()]
@@ -213,7 +197,7 @@ def admin_list(request, model_name):
     model_info = model_map.get(model_name)
     if not model_info:
         return redirect('admin_dashboard')
-    
+
     model, title = model_info
     items = model.objects.all().order_by('-id')
     return render(request, 'portfolio/admin/admin_list.html', {
@@ -235,7 +219,7 @@ def admin_add_item(request, model_name):
     form_info = form_map.get(model_name)
     if not form_info:
         return redirect('admin_dashboard')
-        
+
     form_class, title = form_info
     if request.method == 'POST':
         form = form_class(request.POST, request.FILES)
@@ -264,16 +248,12 @@ def admin_edit_item(request, model_name, pk):
         'skills': (Skill, SkillForm, 'Skill'),
         'testimonials': (Testimonial, TestimonialForm, 'Testimonial'),
         'experience': (Experience, ExperienceForm, 'Experience'),
-<<<<<<< HEAD
         'messages': (ContactMessage, ContactMessageForm, 'Message'),
-=======
-        'messages': (ContactMessage, forms.ModelForm, 'Message'),
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
     }
     model_info = model_map.get(model_name)
     if not model_info:
         return redirect('admin_dashboard')
-        
+
     model, form_class, title = model_info
     instance = get_object_or_404(model, pk=pk)
     if request.method == 'POST':
@@ -312,13 +292,3 @@ def admin_delete_item(request, model_name, pk):
         instance.delete()
         messages.success(request, 'Item deleted successfully!')
     return redirect('admin_list', model_name=model_name)
-<<<<<<< HEAD
-=======
-
-
-
-
-def print_users():
-    for user in User.objects.all():
-        print(user.username)
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367

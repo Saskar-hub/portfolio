@@ -10,18 +10,12 @@ class SiteSettings(models.Model):
     github_link = models.URLField(blank=True)
     linkedin_link = models.URLField(blank=True)
     twitter_link = models.URLField(blank=True)
-<<<<<<< HEAD
     contact_email = models.EmailField(blank=True, null=True)
     phone_number = models.CharField(max_length=50, blank=True, null=True)
     location = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
         return self.website_title or "Site Settings"
-=======
-
-    def __str__(self):
-        return self.website_title
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
 
 class HeroSection(models.Model):
     title = models.CharField(max_length=200, null=True, blank=True)
@@ -42,10 +36,6 @@ class About(models.Model):
     description = RichTextField(null=True, blank=True)
     profile_image = models.ImageField(upload_to='about/', blank=True, null=True)
     resume_file = models.FileField(upload_to='cv/', blank=True, null=True)
-<<<<<<< HEAD
-=======
-    resume_static = models.CharField(max_length=200, blank=True, null=True, help_text="Path to static resume file (e.g. 'portfolio/pdf/resume.pdf')")
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
 
     def __str__(self):
         return "About Section"
@@ -59,7 +49,7 @@ class Skill(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='frontend')
     level = models.IntegerField(default=80)
-    icon_name = models.CharField(max_length=50, blank=True, null=True) # e.g. 'python', 'react'
+    icon_name = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.name if self.name else "Unnamed Skill"
@@ -130,4 +120,3 @@ class Experience(models.Model):
 
     def __str__(self):
         return f"{self.job_title} at {self.company_name}" if self.job_title and self.company_name else "Unnamed Experience"
-

@@ -49,7 +49,7 @@
                             </span>
                             <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                         </a>
-                        
+
                         {% if about.resume_file %}
                         <a href="{{ about.resume_file.url }}" download class="px-6 sm:px-8 py-3 sm:py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-2xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,16 +57,6 @@
                             </svg>
                             Download CV
                         </a>
-<<<<<<< HEAD
-=======
-                        {% elif about.resume_static %}
-                        <a href="{% static about.resume_static %}" download class="px-6 sm:px-8 py-3 sm:py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-2xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                            </svg>
-                            Download CV
-                        </a>
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
                         {% else %}
                         <a href="{{ hero.cta_secondary_link|default:'#about' }}" class="px-6 sm:px-8 py-3 sm:py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-2xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:-translate-y-1 transition-all duration-300 text-center">
                             {{ hero.cta_secondary_text|default:"Learn More" }}
@@ -97,7 +87,6 @@
                 <!-- Right Column: Hero Image with Enhanced Effects -->
                 <div class="order-1 lg:order-2 relative animate-fade-in delay-300">
                     <div class="relative z-10 rounded-full lg:rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-500/20 border-4 border-white dark:border-gray-800 ring-8 ring-blue-500/10 dark:ring-blue-500/5 group w-64 h-64 sm:w-80 sm:h-80 lg:w-full lg:h-full lg:border lg:ring-0 mx-auto">
-<<<<<<< HEAD
                         {% if hero.hero_image %}
                             <div class="relative overflow-hidden aspect-square lg:aspect-auto lg:h-[500px]">
                                 <img src="{{ hero.hero_image.url }}" alt="Hero Image" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" loading="eager">
@@ -116,18 +105,8 @@
                                 <div class="absolute w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full animate-float bottom-10 right-10" style="animation-delay: 2s;"></div>
                             </div>
                         {% endif %}
-=======
-                        <div class="relative overflow-hidden aspect-square lg:aspect-auto lg:h-[500px]">
-                            {% if hero.hero_image %}
-                                <img src="{{ hero.hero_image.url }}" alt="Hero Image" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" loading="eager">
-                            {% else %}
-                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2072" alt="Hero Image Placeholder" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" loading="eager">
-                            {% endif %}
-                            <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        </div>
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
                     </div>
-                    
+
                     <!-- Decorative elements -->
                     <div class="absolute -top-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 bg-blue-500/10 rounded-full blur-2xl animate-pulse"></div>
                     <div class="absolute -bottom-4 -left-4 w-28 h-28 sm:w-32 sm:h-32 bg-purple-500/10 rounded-full blur-2xl animate-pulse" style="animation-delay: 1s;"></div>
@@ -148,7 +127,7 @@
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes fade-in {
             from {
                 opacity: 0;
@@ -157,7 +136,7 @@
                 opacity: 1;
             }
         }
-        
+
         @keyframes float {
             0%, 100% {
                 transform: translateY(0) rotate(0deg);
@@ -166,7 +145,7 @@
                 transform: translateY(-20px) rotate(5deg);
             }
         }
-        
+
         @keyframes float-slow {
             0%, 100% {
                 transform: translateY(0);
@@ -175,7 +154,7 @@
                 transform: translateY(-10px);
             }
         }
-        
+
         @keyframes bounce-subtle {
             0%, 100% {
                 transform: translateY(0);
@@ -184,7 +163,7 @@
                 transform: translateY(-4px);
             }
         }
-        
+
         @keyframes pulse-slow {
             0%, 100% {
                 opacity: 0.5;
@@ -195,7 +174,7 @@
                 transform: scale(1.05);
             }
         }
-        
+
         @keyframes pulse-slower {
             0%, 100% {
                 opacity: 0.3;
@@ -206,7 +185,7 @@
                 transform: scale(1.1);
             }
         }
-        
+
         @keyframes gradient-x {
             0%, 100% {
                 background-size: 200% 200%;
@@ -217,7 +196,7 @@
                 background-position: right center;
             }
         }
-        
+
         @keyframes shine {
             0% {
                 transform: translateX(-100%);
@@ -226,7 +205,7 @@
                 transform: translateX(100%);
             }
         }
-        
+
         @keyframes slide-in-left {
             from {
                 opacity: 0;
@@ -237,7 +216,7 @@
                 transform: translateX(0);
             }
         }
-        
+
         @keyframes slide-in-right {
             from {
                 opacity: 0;
@@ -248,88 +227,88 @@
                 transform: translateX(0);
             }
         }
-        
+
         .animate-fade-in-up {
             animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-        
+
         .animate-fade-in {
             animation: fade-in 0.6s ease-out forwards;
         }
-        
+
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         .animate-float-slow {
             animation: float-slow 8s ease-in-out infinite;
         }
-        
+
         .animate-bounce-subtle {
             animation: bounce-subtle 3s ease-in-out infinite;
         }
-        
+
         .animate-pulse-slow {
             animation: pulse-slow 8s ease-in-out infinite;
         }
-        
+
         .animate-pulse-slower {
             animation: pulse-slower 10s ease-in-out infinite;
         }
-        
+
         .animate-gradient-x {
             animation: gradient-x 3s ease infinite;
         }
-        
+
         .animate-slide-in-left {
             animation: slide-in-left 0.6s ease-out forwards;
         }
-        
+
         .animate-slide-in-right {
             animation: slide-in-right 0.6s ease-out forwards;
         }
-        
+
         .delay-300 {
             animation-delay: 0.3s;
         }
-        
+
         .delay-600 {
             animation-delay: 0.6s;
         }
-        
+
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
         }
-        
+
         /* Scroll Reveal Animation */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         /* Focus styles for accessibility */
         *:focus-visible {
             outline: 2px solid #3b82f6;
             outline-offset: 2px;
             border-radius: 0.25rem;
         }
-        
+
         /* Smooth scroll behavior */
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* Responsive typography */
         @media (max-width: 640px) {
             .reveal {
@@ -346,20 +325,8 @@
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{{ about.title|default:"About Me" }}</h2>
                 <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
             </div>
-<<<<<<< HEAD
             <div class="max-w-4xl mx-auto text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-4">
                 {{ about.description|safe }}
-=======
-            <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 max-w-5xl mx-auto">
-                {% if about.profile_image %}
-                <div class="w-48 h-48 sm:w-64 sm:h-64 rounded-2xl overflow-hidden shadow-xl border-4 border-white dark:border-gray-800 shrink-0">
-                    <img src="{{ about.profile_image.url }}" alt="About Profile" class="w-full h-full object-cover">
-                </div>
-                {% endif %}
-                <div class="flex-1 text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 text-center lg:text-left">
-                    {{ about.description|safe }}
-                </div>
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
             </div>
         </div>
     </section>
@@ -390,28 +357,20 @@
                                     </svg>
                                 </div>
                             {% endif %}
-                            
-<<<<<<< HEAD
+
                             {% if project.keywords %}
                             <div class="absolute top-3 left-3 sm:top-4 sm:left-4 flex gap-2 flex-wrap">
                                 <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-black/50 backdrop-blur-sm text-white text-xs rounded-full">{{ project.keywords|truncatechars:30 }}</span>
-=======
-                            {% if project.tags %}
-                            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 flex gap-2">
-                                {% for tag in project.tags|slice:":2" %}
-                                    <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-black/50 backdrop-blur-sm text-white text-xs rounded-full">{{ tag }}</span>
-                                {% endfor %}
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
                             </div>
                             {% endif %}
                         </div>
-                        
+
                         <div class="p-5 sm:p-6">
                             <h3 class="text-lg sm:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 line-clamp-1">{{ project.title }}</h3>
                             <div class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 text-sm sm:text-base">{{ project.description|safe }}</div>
                             {% if project.live_demo_link %}
                                 <a href="{{ project.live_demo_link }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:gap-3 transition-all duration-300 group text-sm sm:text-base">
-                                    View Project 
+                                    View Project
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>
@@ -460,7 +419,7 @@
                 {% for exp in experiences %}
                     <div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden card-hover border border-gray-100 dark:border-gray-700">
                         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                        
+
                         <div class="p-5 sm:p-6 lg:p-8">
                             <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
                                 <div class="flex-1">
@@ -471,27 +430,10 @@
                                     <span class="text-xs sm:text-sm text-blue-600 dark:text-blue-400 font-medium whitespace-nowrap">{{ exp.duration }}</span>
                                 </div>
                             </div>
-                            
-                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm sm:text-base">{{ exp.description }}</p>
-                            
-<<<<<<< HEAD
 
-=======
-                            {% if exp.achievements %}
-                            <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-                                <ul class="space-y-2">
-                                    {% for achievement in exp.achievements %}
-                                    <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                        {{ achievement }}
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                            {% endif %}
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm sm:text-base">{{ exp.description }}</p>
+
+
                         </div>
                     </div>
                 {% endfor %}
@@ -524,12 +466,6 @@
                             {% endif %}
                             <div class="flex-1 min-w-0">
                                 <div class="font-bold text-sm sm:text-base truncate">{{ testimonial.client_name }}</div>
-<<<<<<< HEAD
-=======
-                                {% if testimonial.position %}
-                                <div class="text-xs sm:text-sm text-gray-500 truncate">{{ testimonial.position }}</div>
-                                {% endif %}
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
                             </div>
                         </div>
                     </div>
@@ -552,26 +488,16 @@
                         </svg>
                         Email Me
                     </a>
-<<<<<<< HEAD
                     {% if site_settings.github_link %}
                     <a href="{{ site_settings.github_link }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 dark:bg-gray-700 text-white rounded-full hover:shadow-xl transition-all duration-300 text-base sm:text-lg font-medium hover:-translate-y-1">
-=======
-                    {% if site_settings.github_url %}
-                    <a href="{{ site_settings.github_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 dark:bg-gray-700 text-white rounded-full hover:shadow-xl transition-all duration-300 text-base sm:text-lg font-medium hover:-translate-y-1">
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                         GitHub
                     </a>
                     {% endif %}
-<<<<<<< HEAD
                     {% if site_settings.linkedin_link %}
                     <a href="{{ site_settings.linkedin_link }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-blue-700 text-white rounded-full hover:shadow-xl transition-all duration-300 text-base sm:text-lg font-medium hover:-translate-y-1">
-=======
-                    {% if site_settings.linkedin_url %}
-                    <a href="{{ site_settings.linkedin_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-blue-700 text-white rounded-full hover:shadow-xl transition-all duration-300 text-base sm:text-lg font-medium hover:-translate-y-1">
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                         </svg>
@@ -596,37 +522,22 @@
                         Creating digital excellence through innovative solutions and cutting-edge technology.
                     </p>
                     <div class="flex space-x-4">
-<<<<<<< HEAD
                         {% if site_settings.github_link %}
                         <a href="{{ site_settings.github_link }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="GitHub">
-=======
-                        {% if site_settings.github_url %}
-                        <a href="{{ site_settings.github_url }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="GitHub">
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
                         </a>
                         {% endif %}
-<<<<<<< HEAD
                         {% if site_settings.linkedin_link %}
                         <a href="{{ site_settings.linkedin_link }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
-=======
-                        {% if site_settings.linkedin_url %}
-                        <a href="{{ site_settings.linkedin_url }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                             </svg>
                         </a>
                         {% endif %}
-<<<<<<< HEAD
                         {% if site_settings.twitter_link %}
                         <a href="{{ site_settings.twitter_link }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
-=======
-                        {% if site_settings.twitter_url %}
-                        <a href="{{ site_settings.twitter_url }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.104c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0021.337-11.997c0-.213-.005-.426-.015-.637a9.935 9.935 0 002.46-2.548l-.047-.02z"/>
                             </svg>
@@ -634,7 +545,7 @@
                         {% endif %}
                     </div>
                 </div>
-                
+
                 <!-- Quick Links -->
                 <div>
                     <h4 class="text-white font-semibold mb-4 text-sm sm:text-base">Quick Links</h4>
@@ -647,7 +558,7 @@
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300 inline-block">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Contact Info -->
                 <div>
                     <h4 class="text-white font-semibold mb-4 text-sm sm:text-base">Contact Info</h4>
@@ -672,7 +583,7 @@
                         {% endif %}
                     </ul>
                 </div>
-                
+
                 <!-- Newsletter or Additional Info -->
                 <div>
                     <h4 class="text-white font-semibold mb-4 text-sm sm:text-base">Location</h4>
@@ -689,11 +600,11 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Bottom Bar -->
             <div class="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-gray-800 text-center">
                 <p class="text-gray-400 text-xs sm:text-sm">
-                    &copy; {% now "Y" %} {{ site_settings.website_title|default:"Portfolio" }}. All rights reserved. 
+                    &copy; {% now "Y" %} {{ site_settings.website_title|default:"Portfolio" }}. All rights reserved.
                     Crafted with <span class="text-red-500">❤️</span> using Django & TailwindCSS
                 </p>
             </div>
@@ -705,7 +616,7 @@
 <script>
     // Intersection Observer for scroll reveal animations
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -717,11 +628,11 @@
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
-    
+
     revealElements.forEach(element => {
         revealObserver.observe(element);
     });
-    
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -735,7 +646,7 @@
             }
         });
     });
-    
+
     // Add loading="lazy" to all images
     document.querySelectorAll('img').forEach(img => {
         if (!img.hasAttribute('loading')) {
@@ -743,4 +654,4 @@
         }
     });
 </script>
-{% endblock %}  
+{% endblock %}

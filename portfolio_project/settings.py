@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Django settings for portfolio_project project.
 
@@ -13,8 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -28,41 +27,31 @@ SECRET_KEY = os.environ.get(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # Render domain + custom domain + localhost for dev
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     '.onrender.com',
+    'saskarraut.com.np',
+    'www.saskarraut.com.np',
 ]
+
 if DEBUG:
     ALLOWED_HOSTS = ['*']
-# Add any additional hosts from env (comma-separated)
+
+# Add any additional hosts from environment
 EXTRA_ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '')
 if EXTRA_ALLOWED_HOSTS:
     ALLOWED_HOSTS.extend(
-        h.strip() for h in EXTRA_ALLOWED_HOSTS.split(',') if h.strip()
+        h.strip() for h in EXTRA_ALLOWED_HOSTS.split(',')
+        if h.strip()
     )
 
 
 # Application definition
 
-=======
-from pathlib import Path
-import os
-import dj_database_url
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-# SECURITY
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-dev-key')
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
-
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
-
-# APPS
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -70,20 +59,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-    'rest_framework',
-    'corsheaders',
-    'ckeditor',
-    'portfolio',
-]
-
-# WhiteNoise middleware (must go after SecurityMiddleware, before everything else)
-MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-=======
     'portfolio',
     'rest_framework',
     'rest_framework_simplejwt',
@@ -91,13 +66,12 @@ MIDDLEWARE = [
     'ckeditor',
 ]
 
-# MIDDLEWARE
+# MIDDLEWARE — canonical order: Security → WhiteNoise → Cors → Session
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -105,7 +79,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-<<<<<<< HEAD
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -130,36 +103,24 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'admin_dashboard'
-LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = '/dashboard/login/'
+LOGIN_REDIRECT_URL = '/dashboard/'
+LOGOUT_REDIRECT_URL = '/dashboard/login/'
 
 
 ROOT_URLCONF = 'portfolio_project.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-=======
-ROOT_URLCONF = 'portfolio_project.urls'
-
-# TEMPLATES
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'templates'],
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-<<<<<<< HEAD
-=======
                 'django.template.context_processors.media',
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
             ],
         },
     },
@@ -167,7 +128,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 
-<<<<<<< HEAD
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -175,7 +135,6 @@ WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
 if DATABASE_URL:
-    import dj_database_url
     DATABASES = {
         "default": dj_database_url.parse(
             DATABASE_URL,
@@ -226,46 +185,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-# WhiteNoise compression & caching for production
-=======
-# DATABASE
-# Render provides DATABASE_URL by default
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
-        conn_max_age=600,
-    )
-}
-
-# PASSWORD VALIDATION
-AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
-]
-
-# INTERNATIONALIZATION
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_TZ = True
-
-# STATIC & MEDIA
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'portfolio' / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# WhiteNoise storage for Render
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
+# WhiteNoise storage for Render — compression + caching
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-<<<<<<< HEAD
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -285,17 +215,3 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
-=======
-# AUTH REDIRECTS
-LOGIN_URL = '/dashboard/login/'
-LOGIN_REDIRECT_URL = '/dashboard/'
-LOGOUT_REDIRECT_URL = '/dashboard/login/'
-
-# SECURITY
-if not DEBUG:
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
->>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
