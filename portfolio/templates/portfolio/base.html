@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
+<<<<<<< HEAD
     <title>{% if site_settings %}{{ site_settings.meta_title|default:site_settings.website_title }}{% else %}Full Stack Developer Portfolio{% endif %}</title>
     <meta name="description" content="{{ site_settings.meta_description|default:'Professional Full Stack Developer. Building scalable, SEO-optimized, and responsive web applications.' }}">
     <meta name="keywords" content="{{ site_settings.meta_keywords|default:'Full Stack Developer, React Developer, Django Developer, Portfolio' }}">
@@ -154,6 +155,22 @@
     <link rel="stylesheet" href="{% static 'portfolio/css/index.css' %}">
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+=======
+    <title>{{ general_content.meta_title|default:"Full Stack Developer Portfolio | React & Django Expert" }}</title>
+    <meta name="description" content="{{ general_content.meta_description|default:'Professional Full Stack Developer specializing in React and Django. Building scalable, SEO-optimized, and responsive web applications.' }}">
+    <meta name="keywords" content="{{ general_content.meta_keywords|default:'Full Stack Developer, React Developer, Django Developer, Portfolio, Web Developer Nepal' }}">
+    <meta name="author" content="Your Name">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{ general_content.meta_title|default:'Full Stack Developer Portfolio' }}">
+    <meta property="og:description" content="{{ general_content.meta_description|default:'Modern web applications built with React and Django' }}">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'portfolio/css/index.css' %}">
+</head>
+<body class="bg-white dark:bg-gray-900">
+>>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -167,6 +184,7 @@
                     <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors">Skills</a>
                     <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors">Experience</a>
                     <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors">Contact</a>
+<<<<<<< HEAD
                     <button id="theme-toggle" type="button" class="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark mode">
                         <svg id="theme-toggle-sun" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -175,6 +193,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
                     </button>
+=======
+>>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
                     {% if user.is_authenticated and user.is_superuser %}
                         <a href="{% url 'admin_dashboard' %}" class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg font-medium">Admin</a>
                     {% endif %}
@@ -184,6 +204,7 @@
     </nav>
     {% block content %}
     {% endblock %}
+<<<<<<< HEAD
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var toggle = document.getElementById('theme-toggle');
@@ -198,5 +219,7 @@
             }
         });
     </script>
+=======
+>>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
 </body>
 </html>

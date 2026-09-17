@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 /* Tailwind CSS is loaded via CDN in base.html */
 /* This file kept for compatibility with import chain */
+=======
+/* @import 'tailwindcss' source(none);
+@source '../**/*.{js,ts,jsx,tsx}';
+
+@import 'tw-animate-css'; */
+>>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367

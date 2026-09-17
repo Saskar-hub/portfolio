@@ -5,6 +5,16 @@ from django import forms
 from rest_framework import viewsets, permissions, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
+<<<<<<< HEAD
+=======
+
+# views.py
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+
+>>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
 from .models import (
     SiteSettings, HeroSection, About, Skill, Project, 
     Blog, ContactMessage, Testimonial, Experience, ProjectImage
@@ -14,10 +24,16 @@ from .serializers import (
     SkillSerializer, ProjectSerializer, BlogSerializer, 
     ContactMessageSerializer, TestimonialSerializer, ExperienceSerializer
 )
+<<<<<<< HEAD
 from django import forms as django_forms
 from .forms import (
     SiteSettingsForm, HeroSectionForm, AboutForm, SkillForm, 
     ProjectForm, BlogForm, ContactMessageForm, TestimonialForm, ExperienceForm
+=======
+from .forms import (
+    SiteSettingsForm, HeroSectionForm, AboutForm, SkillForm, 
+    ProjectForm, BlogForm, TestimonialForm, ExperienceForm
+>>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
 )
 
 # --- API ViewSets ---
@@ -248,7 +264,11 @@ def admin_edit_item(request, model_name, pk):
         'skills': (Skill, SkillForm, 'Skill'),
         'testimonials': (Testimonial, TestimonialForm, 'Testimonial'),
         'experience': (Experience, ExperienceForm, 'Experience'),
+<<<<<<< HEAD
         'messages': (ContactMessage, ContactMessageForm, 'Message'),
+=======
+        'messages': (ContactMessage, forms.ModelForm, 'Message'),
+>>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
     }
     model_info = model_map.get(model_name)
     if not model_info:
@@ -292,3 +312,13 @@ def admin_delete_item(request, model_name, pk):
         instance.delete()
         messages.success(request, 'Item deleted successfully!')
     return redirect('admin_list', model_name=model_name)
+<<<<<<< HEAD
+=======
+
+
+
+
+def print_users():
+    for user in User.objects.all():
+        print(user.username)
+>>>>>>> bbc148c8e9e0d766f329de69be08beba6a477367
