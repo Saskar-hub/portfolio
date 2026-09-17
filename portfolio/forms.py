@@ -26,12 +26,16 @@ class SkillForm(forms.ModelForm):
         fields = '__all__'
 
 class ProjectForm(forms.ModelForm):
-    uploaded_images = forms.FileField(required=False, label="Upload Project Images")
-    
+    uploaded_images = forms.FileField(
+        required=False,
+        label="Upload Project Images",
+        widget=forms.ClearableFileInput(attrs={'class': 'upload-project-images'})
+    )
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['uploaded_images'].widget.attrs.update({'multiple': True})
-    
+        self.fields['uploaded_images'].widget.attrs['multiple'] = 'multiple'
+
     class Meta:
         model = Project
         fields = '__all__'
@@ -40,6 +44,11 @@ class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
         fields = '__all__'
+
+class ContactMessageForm(forms.ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = ['name', 'email', 'message', 'is_read']
 
 class TestimonialForm(forms.ModelForm):
     class Meta:

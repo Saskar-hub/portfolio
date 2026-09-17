@@ -14,9 +14,10 @@ from .serializers import (
     SkillSerializer, ProjectSerializer, BlogSerializer, 
     ContactMessageSerializer, TestimonialSerializer, ExperienceSerializer
 )
+from django import forms as django_forms
 from .forms import (
     SiteSettingsForm, HeroSectionForm, AboutForm, SkillForm, 
-    ProjectForm, BlogForm, TestimonialForm, ExperienceForm
+    ProjectForm, BlogForm, ContactMessageForm, TestimonialForm, ExperienceForm
 )
 
 # --- API ViewSets ---
@@ -247,7 +248,7 @@ def admin_edit_item(request, model_name, pk):
         'skills': (Skill, SkillForm, 'Skill'),
         'testimonials': (Testimonial, TestimonialForm, 'Testimonial'),
         'experience': (Experience, ExperienceForm, 'Experience'),
-        'messages': (ContactMessage, forms.ModelForm, 'Message'),
+        'messages': (ContactMessage, ContactMessageForm, 'Message'),
     }
     model_info = model_map.get(model_name)
     if not model_info:

@@ -1,0 +1,23 @@
+# Django
+Django==5.2.8
+
+# Database
+dj-database-url==3.1.2
+psycopg2-binary==2.9.11
+
+# Production server
+gunicorn==25.1.0
+
+# Static files
+whitenoise==6.12.0
+
+# API / Authentication
+djangorestframework==3.16.1
+djangorestframework-simplejwt==5.5.1
+django-cors-headers==4.8.0
+
+# Rich text editor
+django-ckeditor==6.13.0
+
+# Pillow for image fields
+Pillow==12.1.0

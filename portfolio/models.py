@@ -10,9 +10,12 @@ class SiteSettings(models.Model):
     github_link = models.URLField(blank=True)
     linkedin_link = models.URLField(blank=True)
     twitter_link = models.URLField(blank=True)
+    contact_email = models.EmailField(blank=True, null=True)
+    phone_number = models.CharField(max_length=50, blank=True, null=True)
+    location = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
-        return self.website_title
+        return self.website_title or "Site Settings"
 
 class HeroSection(models.Model):
     title = models.CharField(max_length=200, null=True, blank=True)
