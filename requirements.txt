@@ -23,7 +23,7 @@ PyJWT==2.12.1
 python-dateutil==2.9.0.post0
 
 # Rich text editor
-django-ckeditor==6.13.0
+django-ckeditor==6.7.3
 django-js-asset==3.1.2
 
 # Pillow for image fields
